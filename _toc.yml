@@ -1,0 +1,20 @@
+format: jb-book
+root: docs/home
+
+parts:
+- caption: Introduction
+  chapters:
+  - file: docs/about
+    title: About this resource
+  - file: docs/contributors
+    title: Contributors
+  - url: https://prairielearn.com
+    title: PrairieLearn
+
+- caption: Autograders
+  chapters:
+  - file: content/autograders/autograders
+
+- caption: PrairieLearn Development
+  chapters:
+  - file: content/dev/quickstart
