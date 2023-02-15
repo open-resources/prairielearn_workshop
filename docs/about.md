@@ -2,7 +2,7 @@
 
 # About this resource
 
-# Attribution
+## Attribution
 
 - The logo is a photo by Joseph Yu: https://www.pexels.com/photo/pink-petaled-flowers-620118/
 
