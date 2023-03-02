@@ -5,3 +5,14 @@
 
 - Describe the front-end of the PrairieLearn platform and discuss its potential for use in a classroom.
 - Understand how PrairieLearn can be extended to support a variety of use-cases across multiple disciplines.
+
+## What is PrairieLearn? 
+
+
+## Where is PrairieLearn being used?
+
+
+## History of PrairieLearn
+
+
+## PrairieLearn Community vs. PrairieLearn Enterprise
