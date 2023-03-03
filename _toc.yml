@@ -18,15 +18,15 @@ parts:
   - file: content/6-adoption
   - file: content/7-technical
 
+- caption: Autograders and External Graders
+  chapters:
+  - file: content/dev/quickstart
+  - file: content/dev/autograders
+
 - caption: Teaching with PrairieLearn
   chapters:
   - file: content/8-instructor_guide
   - file: content/9-tips
-
-- caption: PrairieLearn Development
-  chapters:
-  - file: content/dev/quickstart
-  - file: content/dev/autograders
 
 - caption: Acknowledgements
   chapters:
