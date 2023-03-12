@@ -1,8 +1,5 @@
 # Introduction to PrairieLearn
 
-<iframe src="https://www.icloud.com/keynote/073bQi0s3vDOvZx0TGsTtItiQ?embed=true" width="640" height="500" frameborder="0" allowfullscreen="1" referrer="no-referrer"></iframe>
-
-
 ## Learning Intentions
 
 - Describe the front-end of the PrairieLearn platform and discuss its potential for use in a classroom.
