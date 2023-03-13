@@ -34,11 +34,14 @@ repository:
   path_to_book : ""
   branch       : main
 
+bibtex_bibfiles:
+  - content/citations.bib
+
 sphinx:
   config:
     html_show_copyright: false
     html_extra_path: ['files']
-    # bibtex_reference_style: author_year
+    bibtex_reference_style: author_year
     myst_enable_extensions: 
     - amsmath
     - colon_fence
