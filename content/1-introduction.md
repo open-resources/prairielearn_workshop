@@ -1,5 +1,7 @@
 # Introduction to PrairieLearn
 
+To cite something, use this syntax {cite:p}`Herman:2020`.
+
 ## Learning Intentions
 
 By the end of this section, we intend for learners to be able to:
