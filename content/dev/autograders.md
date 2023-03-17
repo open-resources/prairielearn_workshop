@@ -24,7 +24,9 @@ I wanted to test students on constructing small programs in Haskell, generally w
 
 #### A First Question: Programming, Tests, and Randomization
 
-With PL and a Haskell autograder, I could write simple programming queries like this one: TODO, steve/small-sample-with-randomization.
+All questions in this section are in the [PrairieLearn 101 Part 4 course](https://us.prairielearn.com/pl/course_instance/133045/assessment/2336781).
+
+With PL and a Haskell autograder, I could write simple programming queries like "A Small Sample Problem with Randomization".
 
 Let's solve it badly with a function that takes anything (`_`) and produces `0`.
 
@@ -54,7 +56,7 @@ That now lets me make a call like `getOp "{{params.op}}"` and get back the funct
 
 #### A Second Question: Setting the Student Up
 
-Here's a similar problem except that it requires significantly more setup to get the student's code started: TODO, steve/sample-with-randomization-and-setup
+The second problem "Sample Problem that Builds on a Randomized Provided Data Structure" is similar except that it requires significantly more setup to get the student's code started.
 
 The autograder I'm using makes it easy for me to place the student's code inside a module I specify. Check out the 
 `tests/src/Lib-header.mustache.hs` to see what that looks like. I use nearly the same mustache code here as in my `question.html` file to lay out the datatype students build on.
@@ -65,11 +67,11 @@ Shall we solve it, just for fun? We should all know Haskell! 😁
 
 #### Two More Questions to Check Out If You Like
 
-You may also be interested in these two other questions:
+You may also be interested in the two other questions in this zone:
 
-+ TODO `steve/more-haskelly-sample` is similar to what we've already seen but has a bit more Haskell infrastructure, such as in its test file. (I have many more examples that lean more heavily into QuickCheck).
-+ TODO `steve/very-different-use-of-student-code` shows how we can abuse the autograder setup PrairieLearn provides us to create other styles of problem. There are probably better ways to do this (!!), but once you have an autograder, you have scaffolding that you *can* use to make creative new styles of question.
++ "Sample with a Bit More Haskell Infrastructure" is similar to what we've already seen but has a bit more Haskell infrastructure, such as in its test file. (I have many more examples that lean more heavily into QuickCheck).
++ "Ways to Abuse an Autograder: Parsons Problems (but use PL's Built-In Version Instead!)" shows how we can abuse the autograder setup PrairieLearn provides us to create other styles of problem. There are probably better ways to do this (!!), but once you have an autograder, you have scaffolding that you *can* use to make creative new styles of question.
 
-## How Do I Get Started With An Autograder
+<!-- ## How Do I Get Started With An Autograder
 
-TODO: talk about getting Docker set up, adapting an existing autograder, re-link to the documentation, caution about "caching" resources needed in the autograder so preparation isn't slow.
+TODO: talk about getting Docker set up, adapting an existing autograder, re-link to the documentation, caution about "caching" resources needed in the autograder so preparation isn't slow. -->
