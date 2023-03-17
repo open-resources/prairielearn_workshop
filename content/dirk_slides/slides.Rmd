@@ -1,0 +1,123 @@
+---
+title: "PrairieLearn Autograder: An R Example"
+author: "Dirk Eddelbuettel"
+institute: "University of Illinois Urbana-Champaign"
+date: "2023-03-16"
+output:
+  xaringan::moon_reader:
+    lib_dir: libs
+    nature:
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+---
+
+
+## Using An Autograder for R
+
+### Hook in info.json
+
+```json
+"externalGradingOptions": {
+    "enabled": true,
+    "image": "prairielearn/grader-r",
+    "entrypoint": "/r_autograder/run.sh",
+    "timeout": 20
+},
+```
+
+### A very simple convention
+
+- Name a Docker container: 
+  - Here from PrairieLearn
+  - But can be yours, no constraints
+- Name an entrypoint: 
+  - A shell script in a given path
+- See at [GitHub at this URL](https://github.com/PrairieLearn/PrairieLearn/tree/master/graders/r/r_autograder)
+
+---
+
+## The `run.sh` scripts
+
+- At [this URL](https://github.com/PrairieLearn/PrairieLearn/blob/master/graders/r/r_autograder/run.sh)
+- In essence just moves a few files around
+- And calls the R script:
+```sh
+## we evaluate student code inside the test functions
+## as a limited user called ag, see the R helper package plr
+## for details of the implementation
+echo "[run.sh] Rscript pltest.R"
+Rscript pltest.R
+```
+- From which it picks up a JSON file with results
+
+---
+
+## The `pltest.R` script
+
+- At [this URL](https://github.com/PrairieLearn/PrairieLearn/blob/master/graders/r/r_autograder/pltest.R)
+- In essence scans directory: 
+  - we write per-question Title and Points in header of each file
+- Invokes a standard unit test runner from a standard unit test package:
+```r
+tinytest::run_test_dir(tests_dir, ...)
+```
+- Turns summary ("how many passed, how many failed, ...") into JSON
+
+---
+
+## A question `tests` directory
+
+```sh
+edd@rob:~/git/pl-prairielearn101/questions/r_example(master)$ tree
+.
+└── createRObject
+    ├── demo.R
+    ├── info.json
+    ├── question.html
+    └── tests
+        ├── ans.R
+        ├── test_01_exists.R
+        ├── test_02_type.R
+        ├── test_03_length.R
+        ├── test_04_components_exist.R
+        ├── test_05_types.R
+        └── test_06_correct_components.R
+
+2 directories, 10 files
+edd@rob:~/git/pl-prairielearn101/questions/r_example(master)$ 
+```
+
+As many or as few `test_*R` as you like: the test runner runs all of them!
+File  `ans.R` is picked up in each test file to create a reference answer
+against which the test files compare particular aspects.
+
+
+---
+
+## An example test
+
+```r
+## @title Do we find object 'x'?
+## @score 1
+
+library(tinytest)             # load testrunner
+using(ttdo)                   # enable its 'diffobj' extension
+
+## Get student's response
+plr::source_and_eval_safe_with_hiding("/grade/student/student.R",
+                                      NULL,
+                                      "ag",
+                                      "/grade/tests/ans.R")
+
+## check for 'x'
+expect_true(exists("x"))
+```
+
+After a little bit of boilerplate to load the unit test package and an
+extension (for pretty object diff), we evaluate the student code (this has
+bearings on directories from `run.sh`). Here in this example we evaluate one
+predicate: did the student create an object `x` ?
+
+But anything that can be coded can be compared here: No Limits!
+

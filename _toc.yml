@@ -34,5 +34,8 @@ parts:
     title: About this resource
   - file: docs/contributors
     title: Contributors
+  - file: content/10-references
+    title: References
   - url: https://prairielearn.com
     title: PrairieLearn
+
