@@ -21,7 +21,7 @@ parts:
 - caption: External Graders
   chapters:
   # - file: content/dev/quickstart
-  - file: content/dev/autograders
+  - file: content/dev/external_graders.md
 
 # - caption: Teaching with PrairieLearn
 #   chapters:
