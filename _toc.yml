@@ -5,28 +5,28 @@ parts:
 - caption: Getting Started
   chapters:
   - file: content/1-introduction
-  - file: content/2-examples
-  - file: content/3-pedagogy
+#   - file: content/2-examples
+#   - file: content/3-pedagogy
 
-- caption: Assessments and Questions
-  chapters:
-  - file: content/4-assessments
-  - file: content/5-questions
+# - caption: Assessments and Questions
+#   chapters:
+#   - file: content/4-assessments
+#   - file: content/5-questions
 
-- caption: Institutional Adoption
-  chapters:
-  - file: content/6-adoption
-  - file: content/7-technical
+# - caption: Institutional Adoption
+#   chapters:
+#   - file: content/6-adoption
+#   - file: content/7-technical
 
-- caption: Autograders and External Graders
+- caption: External Graders
   chapters:
-  - file: content/dev/quickstart
+  # - file: content/dev/quickstart
   - file: content/dev/autograders
 
-- caption: Teaching with PrairieLearn
-  chapters:
-  - file: content/8-instructor_guide
-  - file: content/9-tips
+# - caption: Teaching with PrairieLearn
+#   chapters:
+#   - file: content/8-instructor_guide
+#   - file: content/9-tips
 
 - caption: Acknowledgements
   chapters:
